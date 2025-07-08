@@ -1,0 +1,24 @@
+.episodes-section-root {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+.episodes-section-info {
+  margin-top: 32px;
+  color: #888;
+}
+.episodes-section-loading {
+  margin-top: 32px;
+}
+.episodes-section-col {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 12px;
+  background: #fafafa;
+}
+.episodes-section-title {
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+  color: black;
+} 

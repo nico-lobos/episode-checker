@@ -1,0 +1,94 @@
+.character-list-root {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character-list-title {
+  text-align: center;
+  color: black;
+}
+
+.character-list-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  justify-items: center;
+  width: 100%;
+}
+
+.character-list-pagination {
+  margin-top: 8px;
+  display: flex;
+}
+
+.character-list-pagination button {
+  margin: 0 4px;
+}
+
+.character-list-pagination span {
+  margin: 0 8px;
+}
+
+.character-list-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #b00;
+  background: #fff6f6;
+  border: 1.5px solid #fbb;
+  border-radius: 12px;
+  margin: 32px auto;
+  padding: 32px 24px;
+  max-width: 400px;
+  box-shadow: 0 2px 12px #0001;
+}
+.character-list-error-message {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.character-list-retry-btn {
+  background: #00b5cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.character-list-retry-btn:hover,
+.character-list-retry-btn:focus-visible {
+  background: #0097a7;
+}
+.character-list-arrow-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  margin: 0 4px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.character-list-arrow-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.character-list-arrow-btn:hover:not(:disabled) {
+  background: #40cfff !important;
+}
+.character-list-arrow-btn:hover:not(:disabled) svg path {
+  stroke: #fff !important;
+}
+.character-list-arrow-btn svg path {
+  stroke: #222;
+  transition: stroke 0.2s;
+} 

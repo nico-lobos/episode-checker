@@ -6,13 +6,12 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
+  min-height: 100vh;
+  background: var(--background, #181818);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  padding: 32px 8px 64px 8px;
   font-family: var(--font-geist-sans);
 }
 
@@ -24,6 +23,49 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.characterColumns {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.characterColumn {
+  background: #f7fafc;
+  border: 2px solid #e0e7ef;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 32px 20px 24px 20px;
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .characterColumns {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .characterColumn {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
   }
 }
 
