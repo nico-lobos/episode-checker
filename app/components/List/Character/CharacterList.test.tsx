@@ -4,7 +4,7 @@ import CharacterList from './CharacterList';
 import { charactersPage1 } from '../../../mock/characters';
 
 describe('CharacterList', () => {
-  beforeEach(() => {
+beforeEach(() => {
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve({ results: charactersPage1, info: { pages: 2 } })
@@ -14,7 +14,7 @@ describe('CharacterList', () => {
 
   afterEach(() => {
     jest.resetAllMocks();
-  });
+});
 
   it('renders characters and handles selection', async () => {
     const handleSelect = jest.fn();

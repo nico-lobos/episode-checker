@@ -1,18 +1,14 @@
 .episodes-list-root {
   margin-bottom: 24px;
 }
-.episodes-list-title {
-  /* Puedes personalizar el h3 aquí si lo deseas */
-}
+
 .episodes-list-empty {
-  color: #888;
+  color: #888888;
 }
-.episodes-list-ul {
-  /* Puedes personalizar la lista aquí si lo deseas */
-}
+
 .episodes-list-li {
   margin-bottom: 8px;
 }
 .episodes-list-airdate {
-  color: #888;
+  color: #888888;
 } 

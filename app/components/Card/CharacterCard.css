@@ -1,10 +1,10 @@
 .character-card {
-  background: #fff;
+  background: #ffffff;
   border: 1.5px solid #e0e7ef;
   border-radius: 14px;
-  box-shadow: 0 2px 12px #0001;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
   padding: 12px;
-  margin: 4px 0;
+  margin: 4px 0px;
   width: 180px;
   height: 150px;
   text-align: center;
@@ -16,7 +16,7 @@
 }
 .character-card.selected {
   border: 2px solid #00b5cc;
-  box-shadow: 0 0 12px #00b5cc33;
+  box-shadow: 0px 0px 12px rgba(0, 181, 204, 0.2);
   background: #e0f7fa;
 }
 .character-card.disabled {
@@ -27,7 +27,7 @@
 .character-card:hover:not(.disabled),
 .character-card:focus-visible:not(.disabled) {
   border: 2px solid #0097a7;
-  box-shadow: 0 0 16px #00b5cc44;
+  box-shadow: 0px 0px 16px rgba(0, 181, 204, 0.27);
   background: #f1fcfd;
 }
 .character-card-img {
@@ -39,21 +39,21 @@
   background: #f0f0f0;
 }
 .character-card-name {
-  margin: 8px 0 4px 0;
+  margin: 8px 0px 4px 0px;
   font-size: 11px;
   font-weight: 600;
-  color: #222;
+  color: #222222;
   text-decoration: underline;
 }
 .character-card-status,
 .character-card-species {
   font-size: 10px;
-  color: #444;
+  color: #444444;
   margin-bottom: 2px;
 }
 .character-card-disabled-msg {
-  color: #b00;
-  margin-top: 8px;
-  font-size: 0.93rem;
+  color: #bb0000;
+  font-size: 10px;
+  margin-bottom: 2px;
   font-weight: 500;
 } 

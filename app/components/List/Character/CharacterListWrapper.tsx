@@ -7,14 +7,30 @@ import EpisodesSection from '../Episode/EpisodesSection/EpisodesSection';
 interface CharacterListWrapperProps {
   characters: Character[];
   char1: Character | null;
-  setChar1: (c: Character) => void;
+  setChar1: (c: Character | null) => void;
   char2: Character | null;
-  setChar2: (c: Character) => void;
+  setChar2: (c: Character | null) => void;
 }
 
 export default function CharacterListWrapper({ characters, char1, setChar1, char2, setChar2 }: CharacterListWrapperProps) {
+  const handleClearSelection = () => {
+    setChar1(null);
+    setChar2(null);
+  };
+
   return (
     <>
+      <div className={styles.clearButtonContainer} data-testid="clear-button-container">
+        {(char1 || char2) && (
+          <button 
+            onClick={handleClearSelection}
+            className={styles.clearButton}
+            aria-label="Limpiar personajes seleccionados"
+          >
+            Limpiar Selección
+          </button>
+        )}
+      </div>
       <div className={styles.characterColumns}>
         <div className={styles.characterColumn}>
           <CharacterList

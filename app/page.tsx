@@ -32,6 +32,14 @@ export default function HomePage() {
       });
   }, []);
 
+  const handleSetChar1 = (char: Character | null) => {
+    setChar1(char);
+  };
+
+  const handleSetChar2 = (char: Character | null) => {
+    setChar2(char);
+  };
+
   return (
     <div className={styles.page}>
       <h1 className={styles.title}>Rick and Morty Character Episodes Explorer</h1>
@@ -42,14 +50,14 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', color: '#b00', margin: 32 }}>
             {error}
             <button onClick={() => window.location.reload()} style={{ marginLeft: 16 }}>Refrescar</button>
-          </div>
+        </div>
         ) : characters ? (
           <CharacterListWrapper
             characters={characters}
             char1={char1}
-            setChar1={setChar1}
+            setChar1={handleSetChar1}
             char2={char2}
-            setChar2={setChar2}
+            setChar2={handleSetChar2}
           />
         ) : null}
       </Suspense>

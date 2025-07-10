@@ -5,20 +5,20 @@
 }
 .episodes-section-info {
   margin-top: 32px;
-  color: #888;
+  color: #888888;
 }
 .episodes-section-loading {
   margin-top: 32px;
 }
 .episodes-section-col {
   flex: 1;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   padding: 12px;
   background: #fafafa;
 }
 .episodes-section-title {
   font-size: 16px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc;
   margin-bottom: 12px;
-  color: black;
+  color: #000000;
 } 

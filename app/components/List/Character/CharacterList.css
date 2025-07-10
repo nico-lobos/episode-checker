@@ -7,7 +7,7 @@
 
 .character-list-title {
   text-align: center;
-  color: black;
+  color: #000000;
 }
 
 .character-list-grid {
@@ -24,11 +24,11 @@
 }
 
 .character-list-pagination button {
-  margin: 0 4px;
+  margin: 0px 4px;
 }
 
 .character-list-pagination span {
-  margin: 0 8px;
+  margin: 0px 8px;
 }
 
 .character-list-error-container {
@@ -37,14 +37,14 @@
   align-items: center;
   justify-content: center;
   min-height: 200px;
-  color: #b00;
+  color: #bb0000;
   background: #fff6f6;
-  border: 1.5px solid #fbb;
+  border: 1.5px solid #ffbbbb;
   border-radius: 12px;
   margin: 32px auto;
   padding: 32px 24px;
   max-width: 400px;
-  box-shadow: 0 2px 12px #0001;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
 }
 .character-list-error-message {
   font-size: 1.2rem;
@@ -53,7 +53,7 @@
 }
 .character-list-retry-btn {
   background: #00b5cc;
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   padding: 10px 24px;
@@ -70,7 +70,7 @@
   background: none;
   border: none;
   padding: 6px;
-  margin: 0 4px;
+  margin: 0px 4px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -86,9 +86,9 @@
   background: #40cfff !important;
 }
 .character-list-arrow-btn:hover:not(:disabled) svg path {
-  stroke: #fff !important;
+  stroke: #ffffff !important;
 }
 .character-list-arrow-btn svg path {
-  stroke: #222;
+  stroke: #222222;
   transition: stroke 0.2s;
 } 
