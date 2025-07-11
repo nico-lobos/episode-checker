@@ -1,4 +1,4 @@
-import type { Episode, Character } from '../types';
+import type { Episode, Character } from '@/types';
 
 export const char1: Character = {
   id: 1,
@@ -39,8 +39,8 @@ export const char2: Character = {
 };
 
 export const episodes: Episode[] = [
-  { id: 1, name: 'Pilot', episode: 'S01E01', air_date: '2013-12-02', characters: [], url: '', created: '' },
-  { id: 2, name: 'Lawnmower Dog', episode: 'S01E02', air_date: '2013-12-09', characters: [], url: '', created: '' },
-  { id: 3, name: 'Anatomy Park', episode: 'S01E03', air_date: '2013-12-16', characters: [], url: '', created: '' },
-  { id: 4, name: 'M. Night Shaym-Aliens!', episode: 'S01E04', air_date: '2014-01-13', characters: [], url: '', created: '' },
+  { id: 1, name: 'Pilot', episode: 'S01E01', air_date: '2013-12-02', characters: ['https://rickandmortyapi.com/api/character/1'], url: '', created: '' },
+  { id: 2, name: 'Lawnmower Dog', episode: 'S01E02', air_date: '2013-12-09', characters: ['https://rickandmortyapi.com/api/character/1', 'https://rickandmortyapi.com/api/character/2'], url: '', created: '' },
+  { id: 3, name: 'Anatomy Park', episode: 'S01E03', air_date: '2013-12-16', characters: ['https://rickandmortyapi.com/api/character/1', 'https://rickandmortyapi.com/api/character/2'], url: '', created: '' },
+  { id: 4, name: 'M. Night Shaym-Aliens!', episode: 'S01E04', air_date: '2014-01-13', characters: ['https://rickandmortyapi.com/api/character/2'], url: '', created: '' },
 ]; 

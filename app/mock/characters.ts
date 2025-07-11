@@ -1,4 +1,4 @@
-import type { Character } from '../types';
+import type { Character } from '@/types';
 
 export const charactersPage1: Character[] = [
   { id: 1, name: 'Rick', status: 'Alive', species: 'Human', type: '', gender: 'Male', origin: { name: '', url: '' }, location: { name: '', url: '' }, image: 'img1', episode: [], url: '', created: '' },

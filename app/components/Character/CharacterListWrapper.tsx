@@ -1,8 +1,8 @@
-import React from 'react';
-import CharacterList from './CharacterList';
-import type { Character } from '../../../types';
-import styles from '../../../page.module.css';
-import EpisodesSection from '../Episode/EpisodesSection/EpisodesSection';
+import { useCallback } from 'react';
+import CharacterList from '@/components/Character/CharacterList';
+import type { Character } from '@/types';
+import './CharacterListWrapper.css';
+import EpisodesSection from '@/components/Episode/EpisodesSection/EpisodesSection';
 
 interface CharacterListWrapperProps {
   characters: Character[];
@@ -13,26 +13,26 @@ interface CharacterListWrapperProps {
 }
 
 export default function CharacterListWrapper({ characters, char1, setChar1, char2, setChar2 }: CharacterListWrapperProps) {
-  const handleClearSelection = () => {
+  const handleClearSelection = useCallback(() => {
     setChar1(null);
     setChar2(null);
-  };
+  }, [setChar1, setChar2]);
 
   return (
     <>
-      <div className={styles.clearButtonContainer} data-testid="clear-button-container">
+      <div className="clearButtonContainer" data-testid="clear-button-container">
         {(char1 || char2) && (
           <button 
             onClick={handleClearSelection}
-            className={styles.clearButton}
-            aria-label="Limpiar personajes seleccionados"
+            className="clearButton"
+            aria-label="Clean Selection"
           >
-            Limpiar Selección
+            Clean Selection
           </button>
         )}
       </div>
-      <div className={styles.characterColumns}>
-        <div className={styles.characterColumn}>
+      <div className="characterColumns">
+        <div className="characterColumn">
           <CharacterList
             title="Character #1"
             characters={characters}
@@ -41,7 +41,7 @@ export default function CharacterListWrapper({ characters, char1, setChar1, char
             onSelect={setChar1}
           />
         </div>
-        <div className={styles.characterColumn}>
+        <div className="characterColumn">
           <CharacterList
             title="Character #2"
             characters={characters}

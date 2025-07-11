@@ -19,8 +19,12 @@
 }
 
 .character-list-pagination {
-  margin-top: 8px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 0px;
 }
 
 .character-list-pagination button {
@@ -76,14 +80,17 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s;
+  font-size: 18px;
+  color: #00b5cc;
+  transition: background 0.2s, color 0.2s;
 }
 .character-list-arrow-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 .character-list-arrow-btn:hover:not(:disabled) {
-  background: #40cfff !important;
+  background: #40cfff;
+  color: #ffffff;
 }
 .character-list-arrow-btn:hover:not(:disabled) svg path {
   stroke: #ffffff !important;
@@ -91,4 +98,10 @@
 .character-list-arrow-btn svg path {
   stroke: #222222;
   transition: stroke 0.2s;
+}
+.character-list-pagination-info {
+  font-size: 12px;
+  color: #222222;
+  min-width: 90px;
+  text-align: center;
 } 

@@ -18,7 +18,7 @@ export type Character = {
   origin: Origin;
   location: Location;
   image: string;
-  episode: string[]; // URLs de episodios
+  episode: string[];
   url: string;
   created: string;
 }; 

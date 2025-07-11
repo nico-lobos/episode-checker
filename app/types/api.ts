@@ -1,5 +1,5 @@
-import type { Character } from './character';
-import type { Episode } from './episode';
+import type { Character } from '@/types/character';
+import type { Episode } from '@/types/episode';
 
 export type ApiInfo = {
   count: number;

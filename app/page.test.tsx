@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
-import HomePage from './page';
+import HomePage from '@/page';
 
-jest.mock('./components/List/Character/CharacterListWrapper', () => ({
+jest.mock('./components/Character/CharacterListWrapper', () => ({
   __esModule: true,
   default: () => <div data-testid="wrapper">Wrapper</div>
 }));
-jest.mock('./components/List/Spinner', () => ({
+jest.mock('./components/shared/Spinner', () => ({
   __esModule: true,
   default: () => <div>Loading...</div>
 }));

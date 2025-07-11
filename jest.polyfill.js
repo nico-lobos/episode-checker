@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 if (typeof TextEncoder === 'undefined') {
   const { TextEncoder, TextDecoder } = require('util');
   global.TextEncoder = TextEncoder;

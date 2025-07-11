@@ -1,0 +1,75 @@
+.episodes-list-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 300px;
+}
+
+.episodes-list-title {
+  flex-shrink: 0;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.episodes-list-ul {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+.episodes-list-empty {
+  color: #888888;
+  text-align: center;
+  font-size: 12px;
+}
+
+.episodes-list-li {
+  margin-bottom: 8px;
+  color: #000000;
+  list-style: none;
+  font-size: 10px;
+}
+.episodes-list-airdate {
+  color: #888888;
+}
+
+.episodes-list-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  flex-shrink: 0;
+}
+
+.episodes-list-arrow-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  margin: 0px 4px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #00b5cc;
+  transition: background 0.2s, color 0.2s;
+}
+.episodes-list-arrow-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.episodes-list-arrow-btn:hover:not(:disabled) {
+  background: #40cfff;
+  color: #ffffff;
+}
+.episodes-list-pagination-info {
+  font-size: 12px;
+  color: #222222;
+  min-width: 90px;
+  text-align: center;
+} 

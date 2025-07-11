@@ -11,13 +11,32 @@
   margin-top: 32px;
 }
 .episodes-section-col {
-  flex: 1;
+  flex: 1 1 320px;
   border: 1px solid #cccccc;
   padding: 12px;
   background: #fafafa;
+  min-width: 320px;
+  max-width: 320px;
+  width: 320px;
+  min-height: 420px;
+  max-height: 420px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
 }
+
+.episodes-list-title {
+  color: #000000;
+  font-size: 12px;
+  text-align: center;
+}
+
 .episodes-section-title {
-  font-size: 16px;
+  text-align: center;
+  font-size: 12px;
   border-bottom: 1px solid #cccccc;
   margin-bottom: 12px;
   color: #000000;

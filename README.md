@@ -16,7 +16,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Open [episode-checker.vercel.app](episode-checker.vercel.app) with your browser to see the production version.
+Open [http://episode-checker.vercel.app](http://episode-checker.vercel.app) with your browser to see the production version.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
