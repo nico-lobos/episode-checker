@@ -7,14 +7,14 @@ import './EpisodesSection.css';
 import { useEpisodes } from '@/hooks/useEpisodes';
 
 interface EpisodesSectionProps {
-  char1: Character | null;
-  char2: Character | null;
+  firstCharacter: Character | null;
+  secondCharacter: Character | null;
 }
 
-export default function EpisodesSection({ char1, char2 }: EpisodesSectionProps) {
-  const { episodes, isLoading } = useEpisodes(char1, char2);
+export default function EpisodesSection({ firstCharacter, secondCharacter }: EpisodesSectionProps) {
+  const { episodes, isLoading } = useEpisodes(firstCharacter, secondCharacter);
 
-  if (!char1 || !char2) {
+  if (!firstCharacter || !secondCharacter) {
     return <div className="episodes-section-info">Select two characters to see their episodes.</div>;
   }
 
@@ -24,9 +24,9 @@ export default function EpisodesSection({ char1, char2 }: EpisodesSectionProps) 
 
   return (
     <div className="episodes-section-root">
-      <EpisodeColumn title="Character #1 - Unique Episodes" episodes={episodes.only1} />
+      <EpisodeColumn title="Character #1 - Unique Episodes" episodes={episodes.onlyFirstCharacter} />
       <EpisodeColumn title="Characters #1 & #2 - Shared Episodes" episodes={episodes.shared} />
-      <EpisodeColumn title="Character #2 - Unique Episodes" episodes={episodes.only2} />
+      <EpisodeColumn title="Character #2 - Unique Episodes" episodes={episodes.onlySecondCharacter} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import type { Episode, Character } from '@/types';
 
-export const char1: Character = {
+export const firstCharacter: Character = {
   id: 1,
   name: 'Rick Sanchez',
   status: 'Alive',
@@ -19,7 +19,7 @@ export const char1: Character = {
   created: '',
 };
 
-export const char2: Character = {
+export const secondCharacter: Character = {
   id: 2,
   name: 'Morty Smith',
   status: 'Alive',

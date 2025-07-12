@@ -1,38 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Episode Checker
 
-## Getting Started
+_Episode Checker_ is a web application that allows you to select two **Rick and Morty** characters and see:
 
-First, run the development server:
+- ✅ Episodes where only character #1 appears
+- ✅ Episodes where only character #2 appears
+- ✅ Episodes they both share
+
+Ideal for fans who want to explore character connections and revisit shared episodes.
+
+---
+
+## 🧪 Technologies Used
+
+| Tool                | Description                                       |
+|---------------------|---------------------------------------------------|
+| **Next.js**         | React framework with routing and SSR              |
+| **TypeScript**      | Statically typed language for safer development   |
+| **Node.js v20**     | JavaScript runtime environment                    |
+| **Jest**            | Unit testing framework                            |
+| **Testing Library** | UI-focused testing utilities                      |
+| **MSW**             | API mocking for reliable tests                    |
+| **Vercel**          | Hosting and CI/CD platform                        |
+| **GitHub Actions**  | CI for automated testing and deployment           |
+
+---
+
+## 🚀 Available Scripts
 
 ```bash
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Run all tests
+npm test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Links
 
-Open [http://episode-checker.vercel.app](http://episode-checker.vercel.app) with your browser to see the production version.
+🔗 Production: https://episode-checker.vercel.app/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+💻 Local: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📁 Folder Structure
+```bash
+app/
+├── components/          # Shared UI components
+│   ├── Character/       # Character-related components
+│   ├── Episode/         # Episode-related components
+│   └── shared/          # Common layout/UI (Spinner)
+├── constants/           # Global constants (pagination, endpoints)
+├── hooks/               # Custom React hooks (useCharacters, useEpisodes)
+├── mock/                # Mock data and MSW server config
+├── types/               # Centralized TypeScript types
+├── utils/               # Utility and helper functions
+├── layout.tsx           # Main layout component
+├── page.tsx             # Main page entry
+```
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📊 Test Coverage
+```bash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project includes test coverage reports powered by **Jest** and **Testing Library**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔍 Run coverage locally
 
-## Deploy on Vercel
+To generate a full coverage report:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm test --coverage

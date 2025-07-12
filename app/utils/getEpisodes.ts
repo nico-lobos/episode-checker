@@ -32,8 +32,8 @@ export function filterEpisodesByCharacters(
   id2: number
 ) {
   const shared: Episode[] = [];
-  const only1: Episode[] = [];
-  const only2: Episode[] = [];
+  const onlyFirstCharacter: Episode[] = [];
+  const onlySecondCharacter: Episode[] = [];
 
   episodes.forEach((ep) => {
     const characterIds = (ep.characters as (Character | string)[]).map((c) =>
@@ -44,11 +44,11 @@ export function filterEpisodesByCharacters(
     const has2 = characterIds.includes(id2);
 
     if (has1 && has2) shared.push(ep);
-    else if (has1) only1.push(ep);
-    else if (has2) only2.push(ep);
+    else if (has1) onlyFirstCharacter.push(ep);
+    else if (has2) onlySecondCharacter.push(ep);
   });
 
-  return { shared, only1, only2 };
+  return { shared, onlyFirstCharacter, onlySecondCharacter };
 }
 
 export async function fetchEpisodes(urls: string[]): Promise<Episode[]> {

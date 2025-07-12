@@ -6,22 +6,22 @@ import EpisodesSection from '@/components/Episode/EpisodesSection/EpisodesSectio
 
 interface CharacterListWrapperProps {
   characters: Character[];
-  char1: Character | null;
-  setChar1: (c: Character | null) => void;
-  char2: Character | null;
-  setChar2: (c: Character | null) => void;
+  firstCharacter: Character | null;
+  setFirstCharacter: (c: Character | null) => void;
+  secondCharacter: Character | null;
+  setSecondCharacter: (c: Character | null) => void;
 }
 
-export default function CharacterListWrapper({ characters, char1, setChar1, char2, setChar2 }: CharacterListWrapperProps) {
+export default function CharacterListWrapper({ characters, firstCharacter, setFirstCharacter, secondCharacter, setSecondCharacter }: CharacterListWrapperProps) {
   const handleClearSelection = useCallback(() => {
-    setChar1(null);
-    setChar2(null);
-  }, [setChar1, setChar2]);
+    setFirstCharacter(null);
+    setSecondCharacter(null);
+  }, [setFirstCharacter, setSecondCharacter]);
 
   return (
     <>
       <div className="clearButtonContainer" data-testid="clear-button-container">
-        {(char1 || char2) && (
+        {(firstCharacter || secondCharacter) && (
           <button 
             onClick={handleClearSelection}
             className="clearButton"
@@ -36,22 +36,22 @@ export default function CharacterListWrapper({ characters, char1, setChar1, char
           <CharacterList
             title="Character #1"
             characters={characters}
-            selectedId={char1?.id ?? null}
-            otherSelectedId={char2?.id ?? null}
-            onSelect={setChar1}
+            selectedId={firstCharacter?.id ?? null}
+            otherSelectedId={secondCharacter?.id ?? null}
+            onSelect={setFirstCharacter}
           />
         </div>
         <div className="characterColumn">
           <CharacterList
             title="Character #2"
             characters={characters}
-            selectedId={char2?.id ?? null}
-            otherSelectedId={char1?.id ?? null}
-            onSelect={setChar2}
+            selectedId={secondCharacter?.id ?? null}
+            otherSelectedId={firstCharacter?.id ?? null}
+            onSelect={setSecondCharacter}
           />
         </div>
       </div>
-      <EpisodesSection char1={char1} char2={char2} />
+      <EpisodesSection firstCharacter={firstCharacter} secondCharacter={secondCharacter} />
     </>
   );
 } 

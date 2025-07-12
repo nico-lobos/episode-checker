@@ -9,8 +9,8 @@ import styles from './page.module.css';
 
 export default function HomePage() {
   const { characters, loading, error } = useCharacters();
-  const [char1, setChar1] = useState<Character | null>(null);
-  const [char2, setChar2] = useState<Character | null>(null);
+  const [firstCharacter, setFirstCharacter] = useState<Character | null>(null);
+  const [secondCharacter, setSecondCharacter] = useState<Character | null>(null);
 
   if (loading) return <Spinner />;
 
@@ -32,10 +32,10 @@ export default function HomePage() {
       <h1 className={styles.title}>Rick and Morty Character Episodes Explorer</h1>
       <CharacterListWrapper
         characters={characters}
-        char1={char1}
-        setChar1={setChar1}
-        char2={char2}
-        setChar2={setChar2}
+        firstCharacter={firstCharacter}
+        setFirstCharacter={setFirstCharacter}
+        secondCharacter={secondCharacter}
+        setSecondCharacter={setSecondCharacter}
       />
     </div>
   );

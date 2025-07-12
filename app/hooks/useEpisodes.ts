@@ -3,15 +3,15 @@ import type { Character, Episode } from '@/types';
 import { fetchAllEpisodes, filterEpisodesByCharacters } from '@/utils/getEpisodes';
 
 interface EpisodeGroups {
-  only1: Episode[];
-  only2: Episode[];
+  onlyFirstCharacter: Episode[];
+  onlySecondCharacter: Episode[];
   shared: Episode[];
 }
 
-export function useEpisodes(char1: Character | null, char2: Character | null) {
+export function useEpisodes(firstCharacter: Character | null, secondCharacter: Character | null) {
   const [episodes, setEpisodes] = useState<EpisodeGroups>({
-    only1: [],
-    only2: [],
+    onlyFirstCharacter: [],
+    onlySecondCharacter: [],
     shared: [],
   });
 
@@ -21,8 +21,8 @@ export function useEpisodes(char1: Character | null, char2: Character | null) {
   useEffect(() => {
     let isCancelled = false;
 
-    if (!char1 || !char2) {
-      setEpisodes({ only1: [], only2: [], shared: [] });
+    if (!firstCharacter || !secondCharacter) {
+      setEpisodes({ onlyFirstCharacter: [], onlySecondCharacter: [], shared: [] });
       return;
     }
 
@@ -34,7 +34,7 @@ export function useEpisodes(char1: Character | null, char2: Character | null) {
         const allEpisodes = await fetchAllEpisodes();
         if (isCancelled) return;
 
-        const grouped = filterEpisodesByCharacters(allEpisodes, char1.id, char2.id);
+        const grouped = filterEpisodesByCharacters(allEpisodes, firstCharacter.id, secondCharacter.id);
         setEpisodes(grouped);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
@@ -49,12 +49,12 @@ export function useEpisodes(char1: Character | null, char2: Character | null) {
     return () => {
       isCancelled = true;
     };
-  }, [char1, char2]);
+  }, [firstCharacter, secondCharacter]);
 
   return {
     episodes,
     isLoading: loading,
     error,
-    hasData: !!char1 && !!char2 && episodes.shared.length + episodes.only1.length + episodes.only2.length > 0,
+    hasData: !!firstCharacter && !!secondCharacter && episodes.shared.length + episodes.onlyFirstCharacter.length + episodes.onlySecondCharacter.length > 0,
   };
 }

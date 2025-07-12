@@ -32,10 +32,10 @@ describe('CharacterListWrapper', () => {
   const setup = (overrides = {}) => {
     const props = {
       characters: charactersPage1,
-      char1: null,
-      setChar1: jest.fn(),
-      char2: null,
-      setChar2: jest.fn(),
+      firstCharacter: null,
+      setFirstCharacter: jest.fn(),
+      secondCharacter: null,
+      setSecondCharacter: jest.fn(),
       ...overrides,
     };
     customRender(<CharacterListWrapper {...props} />);
@@ -55,34 +55,34 @@ describe('CharacterListWrapper', () => {
     expect(screen.queryByRole('button', { name: 'Clean Selection' })).not.toBeInTheDocument();
   });
 
-  it('shows clear button when char1 is selected', () => {
-    setup({ char1: charactersPage1[0] });
+  it('shows clear button when firstCharacter is selected', () => {
+    setup({ firstCharacter: charactersPage1[0] });
     expect(screen.getByRole('button', { name: 'Clean Selection' })).toBeInTheDocument();
   });
 
-  it('shows clear button when char2 is selected', () => {
-    setup({ char2: charactersPage1[1] });
+  it('shows clear button when secondCharacter is selected', () => {
+    setup({ secondCharacter: charactersPage1[1] });
     expect(screen.getByRole('button', { name: 'Clean Selection' })).toBeInTheDocument();
   });
 
   it('shows clear button when both characters are selected', () => {
-    setup({ char1: charactersPage1[0], char2: charactersPage1[1] });
+    setup({ firstCharacter: charactersPage1[0], secondCharacter: charactersPage1[1] });
     expect(screen.getByRole('button', { name: 'Clean Selection' })).toBeInTheDocument();
   });
 
-  it('calls setChar1 and setChar2 with null when clear button is clicked', () => {
-    const setChar1 = jest.fn();
-    const setChar2 = jest.fn();
-    setup({ char1: charactersPage1[0], char2: charactersPage1[1], setChar1, setChar2 });
+  it('calls setFirstCharacter and setSecondCharacter with null when clear button is clicked', () => {
+    const setFirstCharacter = jest.fn();
+    const setSecondCharacter = jest.fn();
+    setup({ firstCharacter: charactersPage1[0], secondCharacter: charactersPage1[1], setFirstCharacter, setSecondCharacter });
 
     fireEvent.click(screen.getByRole('button', { name: 'Clean Selection' }));
 
-    expect(setChar1).toHaveBeenCalledWith(null);
-    expect(setChar2).toHaveBeenCalledWith(null);
+    expect(setFirstCharacter).toHaveBeenCalledWith(null);
+    expect(setSecondCharacter).toHaveBeenCalledWith(null);
   });
 
   it('has proper accessibility label on clear button', () => {
-    setup({ char1: charactersPage1[0] });
+    setup({ firstCharacter: charactersPage1[0] });
     const button = screen.getByRole('button', { name: 'Clean Selection' });
     expect(button).toHaveAttribute('aria-label', 'Clean Selection');
   });
