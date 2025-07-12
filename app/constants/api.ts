@@ -1,5 +1,7 @@
+export const API_BASE = 'https://rickandmortyapi.com/api';
+
 export const API_ENDPOINTS = {
-  CHARACTERS: 'https://rickandmortyapi.com/api/character',
-  EPISODES_BY_IDS: 'https://rickandmortyapi.com/api/episode/:ids',
-  EPISODES: 'https://rickandmortyapi.com/api/episode',
-}; 
+  CHARACTERS: `${API_BASE}/character`,
+  EPISODES: `${API_BASE}/episode`,
+  EPISODES_BY_IDS: (ids: string) => `${API_BASE}/episode/${ids}`,
+};

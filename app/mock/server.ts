@@ -2,7 +2,7 @@ import { setupServer } from 'msw/node';
 import { http, HttpResponse, ResponseResolver } from 'msw';
 import { charactersPage1, charactersPage2 } from '@/mock/characters';
 import { episodes } from '@/mock/episodes';
-import { API_ENDPOINTS } from '@/constants/api';
+import { API_BASE } from '@/constants/api';
 
 export let dynamicHandler: ResponseResolver | null = null;
 export function setDynamicHandler(handler: typeof dynamicHandler) {
@@ -10,15 +10,17 @@ export function setDynamicHandler(handler: typeof dynamicHandler) {
 }
 
 export const handlers = [
-  http.get(API_ENDPOINTS.CHARACTERS, ({ request }) => {
+  http.get(`${API_BASE}/character`, ({ request }) => {
     const url = new URL(request.url);
     const page = url.searchParams.get('page');
+
     if (page === '2') {
       return HttpResponse.json({ results: charactersPage2, info: { pages: 2 } });
     }
+
     return HttpResponse.json({ results: charactersPage1, info: { pages: 2 } });
   }),
-  http.get(API_ENDPOINTS.EPISODES_BY_IDS, ({ params }) => {
+  http.get(`${API_BASE}/episode/:ids`, ({ params }) => {
     const ids = params.ids as string;
     const idArr = ids.split(',').map(Number);
     const found = episodes.filter(e => idArr.includes(e.id));

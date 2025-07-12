@@ -46,10 +46,10 @@ npm test
 ## 📁 Folder Structure
 ```bash
 app/
-├── components/          # Shared UI components
+├── components/          # UI components
 │   ├── Character/       # Character-related components
 │   ├── Episode/         # Episode-related components
-│   └── shared/          # Common layout/UI (Spinner)
+│   └── shared/          # Shared UI components (Spinner)
 ├── constants/           # Global constants (pagination, endpoints)
 ├── hooks/               # Custom React hooks (useCharacters, useEpisodes)
 ├── mock/                # Mock data and MSW server config

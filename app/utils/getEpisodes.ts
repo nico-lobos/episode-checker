@@ -1,4 +1,5 @@
 import type { Episode, Character } from '@/types';
+import { API_ENDPOINTS } from '@/constants/api';
 
 export function extractEpisodeId(url: string): string {
   const match = url.match(/(\d+)\/?$/);
@@ -7,7 +8,7 @@ export function extractEpisodeId(url: string): string {
 
 export async function fetchAllEpisodes(): Promise<Episode[]> {
   let allEpisodes: Episode[] = [];
-  let nextUrl: string | null = '/api/episode';
+  let nextUrl: string | null = API_ENDPOINTS.EPISODES;
 
   while (nextUrl) {
     const res = await fetch(nextUrl);
@@ -53,8 +54,10 @@ export function filterEpisodesByCharacters(
 
 export async function fetchEpisodes(urls: string[]): Promise<Episode[]> {
   if (urls.length === 0) return [];
+
   const ids = Array.from(new Set(urls.map(extractEpisodeId))).join(',');
-  const res = await fetch(`https://rickandmortyapi.com/api/episode/${ids}`);
+  const url = API_ENDPOINTS.EPISODES_BY_IDS(ids);
+  const res = await fetch(url);
 
   if (!res.ok) throw new Error('Failed to fetch episodes');
 
